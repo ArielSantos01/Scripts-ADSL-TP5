@@ -8,12 +8,12 @@ fi
 
 usuario="$1"
 directorio_usuario="/tmp/copia$usuario"
-cinta="/home/ariel/workspaces/bash/Scripts-ADSL-TP4/cinta"
+cinta="/dev/cinta/cinta.cpio"
 
 if cat /etc/passwd | grep "$usuario"
 then
-  cpio -t < "$cinta" | grep "$usuario" | cpio -idum < "$cinta" -D "$directorio_usuario"
-
+  cpio -t < "$cinta" | grep "$usuario" | cpio -D "$directorio_usuario" -idum < "$cinta" 
+  echo "Los archivos se han copiado exitosamente"
 else
   echo "No se ha encontrado el usuario $usuario"
   sleep 3

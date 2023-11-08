@@ -2,15 +2,15 @@
 
 if [ $# -ne 1 ]
   then
-    echo "Uso: $0 <nombre del archivo>"
+    echo "Uso: $0 <nombre del archivo (path completo)>"
     exit 1
   fi
 
   archivo="$1"
   ultimo_log=$(ls -1t /etc/log/logcopiadia/*.log | head -1)
-  cinta="/dev/cinta"
+  cinta="/dev/cinta/cinta.cpio"
   #cinta="/home/ariel/workspaces/bash/Scripts-ADSL-TP4/cinta"
-  echo $ultimo_log
+  #echo $ultimo_log
   if grep -q "$archivo" "$ultimo_log"
   then
     less $ultimo_log
