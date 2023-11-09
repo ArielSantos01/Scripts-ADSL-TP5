@@ -12,7 +12,7 @@ cinta="/dev/cinta/cinta.cpio"
 
 if cat /etc/passwd | grep "$usuario"
 then
-  cpio -t < "$cinta" | grep "$usuario" | cpio -D "$directorio_usuario" -idum < "$cinta" 
+  cpio -t < "$cinta" | grep "$usuario" | cpio -d "$directorio_usuario" -idum < "$cinta" 
   echo "Los archivos se han copiado exitosamente"
 else
   echo "No se ha encontrado el usuario $usuario"

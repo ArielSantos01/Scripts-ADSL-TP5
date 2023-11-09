@@ -9,8 +9,7 @@ if [ $# -ne 1 ]
   archivo="$1"
   ultimo_log=$(ls -1t /etc/log/logcopiadia/*.log | head -1)
   cinta="/dev/cinta/cinta.cpio"
-  #cinta="/home/ariel/workspaces/bash/Scripts-ADSL-TP4/cinta"
-  #echo $ultimo_log
+
   if grep -q "$archivo" "$ultimo_log"
   then
     less $ultimo_log
