@@ -10,6 +10,7 @@ copiar(){
     #$1 - Directorio Origen
     #$2 - Archivo Cinta
       LOGFILE="/etc/log/logcopiadia/$(date +%Y%m%d%H%M).log"
+      #Se escribe la dirección de cinta al inicio del LOGFILE, para facilitar su identificación en el tp5
       echo "$2" > "$LOGFILE"
       find $1 | cpio -ovcO "$2" 1>> "$LOGFILE" 2>> "$LOGFILE"
       
