@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "Backup del directorio de un usuario específico."
+
 if [ $# -ne 1 ]
 then
 	echo "Uso: $0 <nombre_usuario>"
@@ -22,7 +24,8 @@ then
 	mkdir /etc/copia
 fi
 
-tar -czf "/etc/copia/$usuario$(date +%Y%m%d).tar.gz" "$directorio/Descargas"
+#tar -z comprime el archivo tar con gzip.
+tar -czf "/etc/copia/$usuario$(date +%Y%m%d).tar.gz" "$directorio"
 
 if [ $? -eq 0 ]
 then

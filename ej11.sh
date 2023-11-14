@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "Buscar archivo específico entre los logs"
 if [ $# -ne 1 ]
   then
     echo "Uso: $0 <nombre del archivo (path completo)>"
@@ -33,7 +33,7 @@ if [ "$ultimo_log" != "" ]; then
           mv "$archivo" "${archivo}.bkp$(date +%Y%m%d)"
 	fi
           echo "PROCESANDO... ESPERE O CTRL+C PARA ABORTAR"
-          cpio -idm < "$cinta" "$archivo"
+	  cpio -idm "$archivo" < "$cinta"
           echo "SE RESTAURÓ EL ARCHIVO $archivo"
         ;;
       *)
