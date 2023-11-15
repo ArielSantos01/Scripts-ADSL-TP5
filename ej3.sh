@@ -15,5 +15,4 @@ then
   sleep 3
   exit 1
 fi  
-
 tar -tvf <(zcat "$archivo") | less
