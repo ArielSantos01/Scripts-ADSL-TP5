@@ -1,5 +1,6 @@
 #! /bin/bash
 
+echo "Mostrar contenido de un archivo tar.gz"
 if [ $# -ne 1 ]
 then
 	echo "Uso: $0 <archivo_comprimido>"
